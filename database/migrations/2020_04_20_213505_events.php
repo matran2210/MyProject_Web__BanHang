@@ -17,6 +17,9 @@ class Events extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('idUser');
             $table->bigInteger('deadline');
+            $table->string('reward');
+            $table->string('mode');
+            
             $table->timestamps();
         });
     }
