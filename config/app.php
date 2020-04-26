@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', true),
+    'debug' => (bool) env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -67,7 +67,7 @@ return [
     |
     */
 
-    'timezone' =>  'Asia/Ho_Chi_Minh',
+    'timezone' => 'UTC',
 
     /*
     |--------------------------------------------------------------------------
@@ -119,8 +119,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY','base64:8JiOnVMG+tIStMVR9LvOYpP9eXT1p5O1Ypx/Y8sEOEU='),
-  
+    'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
 
@@ -140,16 +139,11 @@ return [
         /*
          * Laravel Framework Service Providers...
          */
-        Yajra\DataTables\DataTablesServiceProvider::class,
-        Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
         Illuminate\Auth\AuthServiceProvider::class,
-        Collective\Html\HtmlServiceProvider::class,
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
         Illuminate\Bus\BusServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
-
-
         Illuminate\Cookie\CookieServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Encryption\EncryptionServiceProvider::class,
@@ -181,7 +175,6 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-
     ],
 
     /*
@@ -197,13 +190,8 @@ return [
 
     'aliases' => [
 
-
         'App' => Illuminate\Support\Facades\App::class,
-        'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
-
         'Arr' => Illuminate\Support\Arr::class,
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
         'Artisan' => Illuminate\Support\Facades\Artisan::class,
         'Auth' => Illuminate\Support\Facades\Auth::class,
         'Blade' => Illuminate\Support\Facades\Blade::class,
@@ -219,6 +207,7 @@ return [
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
+        'Http' => Illuminate\Support\Facades\Http::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
@@ -237,8 +226,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-
-        'DataTables' => Yajra\DataTables\Facades\DataTables::class,
 
     ],
 
