@@ -33,7 +33,7 @@ return [
 
     'lifetime' => env('SESSION_LIFETIME', 120),
 
-    'expire_on_close' => false,
+    'expire_on_close' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -155,6 +155,7 @@ return [
 
     'domain' => env('SESSION_DOMAIN', null),
 
+
     /*
     |--------------------------------------------------------------------------
     | HTTPS Only Cookies
@@ -166,7 +167,7 @@ return [
     |
     */
 
-    'secure' => env('SESSION_SECURE_COOKIE'),
+    'secure' => env('SESSION_SECURE_COOKIE', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -188,12 +189,12 @@ return [
     |
     | This option determines how your cookies behave when cross-site requests
     | take place, and can be used to mitigate CSRF attacks. By default, we
-    | will set this value to "lax" since this is a secure default value.
+    | do not enable this as other CSRF protection services are in place.
     |
-    | Supported: "lax", "strict", "none", null
+    | Supported: "lax", "strict", "none"
     |
     */
 
-    'same_site' => 'lax',
+    'same_site' => null,
 
 ];
